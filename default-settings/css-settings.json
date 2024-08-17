@@ -1,0 +1,6 @@
+{
+  "css.validate": false,
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.float": "error",
+  "css.lint.idSelector": "error"
+}
