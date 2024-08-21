@@ -1,7 +1,32 @@
 {
   "recommendations": [
+    // better comments
+    "aaron-bond.better-comments",
+    // bookmarks
+    "alefragnani.Bookmarks",
+    // code spell checker
     "streetsidesoftware.code-spell-checker",
+    // code snap
+    "adpyke.codesnap",
+    // dotEnv
+    "mikestead.dotenv",
+    // eslint
+    "dbaeumer.vscode-eslint",
+    // extTodo-highlight
+    "wayou.vscode-todo-highlight",
+    // task explorer
+    "spmeesseman.vscode-taskexplorer",
+    // git history
+    "donjayamanne.githistory",
+    //git lens
+    "eamodio.gitlens",
+    // path intellisense
+    "christian-kohler.path-intellisense",
+    // prettier
     "esbenp.prettier-vscode",
+    // rest client
+    "humao.rest-client",
+    // code metrics
     "kisstkondoros.vscode-codemetrics"
   ]
 }
