@@ -1,0 +1,21 @@
+{
+  "name": "@amittksharma/vscode-settings",
+  "version": "1.0.0",
+  "description": "Package contains the vs-code editor settings, for better developer experience and with some welll known extension recommendation",
+  "keywords": [
+    "VS Code Settings",
+    "VS Code Developer Experience",
+    "VS Code Editor Settings",
+    "Editor Settings",
+    "VS Code Extensions",
+    "Known VS Code Settings & Extensions",
+    "VS Code Settings & Extensions"
+  ],
+  "author": "Amitt K Sharma`",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amittkSharma/vscode-settings.git"
+  },
+  "homepage": "https://github.com/amittkSharma/vscode-settings#readme"
+}
