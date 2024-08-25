@@ -17,5 +17,13 @@
     "type": "git",
     "url": "git+https://github.com/amittkSharma/vscode-settings.git"
   },
-  "homepage": "https://github.com/amittkSharma/vscode-settings#readme"
+  "homepage": "https://github.com/amittkSharma/vscode-settings#readme",
+  "devDependencies": {
+    "@types/node": "22.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "start": "ts-node ./src/index.ts"
+  }
 }

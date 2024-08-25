@@ -1,6 +1,4 @@
 {
-  "extends": ["./git-settings.json", "./css-settings.json"],
-  // eslint
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -13,15 +11,11 @@
       "!cwd": true
     }
   ],
-
-  // explorer settings
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
 
-  // auto update imports
   "typescript.updateImportsOnFileMove.enabled": "always",
 
-  // editor settings
   "editor.formatOnSave": true,
   "[markdown]": {
     "editor.formatOnSave": true
@@ -47,19 +41,16 @@
   "editor.snippetSuggestions": "top",
   "editor.wordWrap": "off",
 
-  // diff editor settings
   "diffEditor.wordWrap": "off",
   "diffEditor.ignoreTrimWhitespace": false,
 
-  // breadcrumbs
   "breadcrumbs.enabled": true,
 
-  // files settings
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "files.autoSave": "off",
-  // configure glob patterns for excluding files and folders.
+
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
@@ -77,7 +68,7 @@
     "*.query": "sparql",
     "*.flow": "typescript"
   },
-  // configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the file.exclude setting.
+
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -86,7 +77,6 @@
     "**/typings": true
   },
 
-  // code formatter configuration
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -103,16 +93,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // inlay hints
   "editor.inlayHints.enabled": "offUnlessPressed",
-  // inlay hints: typescript
+
   "typescript.inlayHints.parameterNames.enabled": "all",
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
-  // inlay hints: javascript
+
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
@@ -120,7 +109,6 @@
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
   "javascript.inlayHints.enumMemberValues.enabled": true,
 
-  // references and implementations
   "typescript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.showOnAllFunctions": true,
   "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
