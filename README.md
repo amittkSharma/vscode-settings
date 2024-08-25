@@ -1,6 +1,36 @@
 # vscode-settings
 
-Package contains the vs-code editor settings, for better developer experience and with some welll known extension recommendation
+Package contains the vs-code editor settings, for better developer experience and with some well known extension recommendation
+
+## Features
+
+- vscode-settings can be installed both as local or global package
+- flexibility to use single source of settings and extensions across all their VS Code instances & projects
+- provides vscode settings for better developer experience
+- recommends community suggested extensions
+
+## Installing via Npm
+
+```Globally
+npm install -g @amittksharma/vscode-settings
+```
+
+It is advisable to use install this packages dev-dependency to any other project
+
+```Locally
+npm install @amittksharma/vscode-settings
+```
+
+### Usage
+
+- Install the package either globally or locally using the above commands
+- There are two options to consume this packages
+  - User Settings
+    - Extends the VS Code user settings with the settings from the packages
+  - Workspace Settings
+    - Create a .vscode folder in project root folder
+    - Create a settings.json file
+    - Create a extensions.json file
 
 ## Supported Extensions
 
@@ -20,3 +50,7 @@ Package contains the vs-code editor settings, for better developer experience an
 | 12.  | [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)                            | Yes       |
 | 13.  | [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)               | Yes       |
 | 14.  | [Task Explorer](https://marketplace.visualstudio.com/items?itemName=spmeesseman.vscode-taskexplorer)            | Yes       |
+
+```
+
+```
