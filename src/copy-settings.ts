@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import {
   DEFAULT_SETTINGS_EXTENSIONS_PATH,
@@ -6,6 +6,7 @@ import {
   VS_CODE_SETTINGS_FILE_NAME,
   VS_CODE_SETTINGS_FILES,
 } from "./constants";
+("fs");
 
 export const copySettings = () => {
   try {
@@ -14,7 +15,7 @@ export const copySettings = () => {
     let completeSettings: object | undefined = undefined;
 
     VS_CODE_SETTINGS_FILES.forEach((fileName) => {
-      let rawData = fs.readFileSync(
+      let rawData = readFileSync(
         join(DEFAULT_SETTINGS_EXTENSIONS_PATH, fileName),
         "utf8"
       );
@@ -27,7 +28,7 @@ export const copySettings = () => {
     });
 
     if (completeSettings) {
-      fs.writeFileSync(
+      writeFileSync(
         join(VS_CODE_FOLDER_NAME, VS_CODE_SETTINGS_FILE_NAME),
         JSON.stringify(completeSettings, null, 2)
       );
