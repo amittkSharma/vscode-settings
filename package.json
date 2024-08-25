@@ -1,7 +1,7 @@
 {
-  "name": "@amittksharma/vscode-settings",
+  "name": "vscode-settings-extensions",
   "version": "1.0.0",
-  "description": "Package contains the vs-code editor settings, for better developer experience and with some welll known extension recommendation",
+  "description": "Package contains the vs-code editor settings, for better developer experience and with some well-known and community appreciated extensions",
   "keywords": [
     "VS Code Settings",
     "VS Code Developer Experience",
