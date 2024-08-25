@@ -24,6 +24,13 @@ npm install @amittksharma/vscode-settings
 ### Usage
 
 - Install the package either globally or locally using the above commands
+- There are two options to consume this packages
+  - User Settings
+    - Extends the VS Code user settings with the settings from the packages
+  - Workspace Settings
+    - Create a .vscode folder in project root folder
+    - Create a settings.json file
+    - Create a extensions.json file
 
 ## Supported Extensions
 
