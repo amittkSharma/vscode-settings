@@ -2,7 +2,7 @@ import { copyExtensions } from "./copy-extensions";
 import { copySettings } from "./copy-settings";
 import { verifyVsCodeFolder } from "./vscode-existence-creation";
 
-const runApp = () => {
+const launchProcess = () => {
   try {
     verifyVsCodeFolder();
     copySettings();
@@ -12,4 +12,4 @@ const runApp = () => {
   }
 };
 
-runApp();
+launchProcess();
