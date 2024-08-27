@@ -3,10 +3,9 @@ import { join } from "path";
 import {
   DEFAULT_SETTINGS_EXTENSIONS_PATH,
   VS_CODE_EXTENSION_FILE,
-  VS_CODE_FOLDER_NAME,
 } from "./constants";
 
-export const copyExtensions = () => {
+export const copyExtensions = (extensionsFilePath: string) => {
   try {
     console.log(`Starting the process of copying vscode extensions`);
 
@@ -17,10 +16,7 @@ export const copyExtensions = () => {
     let readable = JSON.parse(rawData);
 
     if (readable) {
-      writeFileSync(
-        join(VS_CODE_FOLDER_NAME, VS_CODE_EXTENSION_FILE),
-        JSON.stringify(readable, null, 2)
-      );
+      writeFileSync(extensionsFilePath, JSON.stringify(readable, null, 2));
     }
   } catch (error) {
     throw new Error(

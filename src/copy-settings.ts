@@ -2,13 +2,11 @@ import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import {
   DEFAULT_SETTINGS_EXTENSIONS_PATH,
-  VS_CODE_FOLDER_NAME,
-  VS_CODE_SETTINGS_FILE_NAME,
   VS_CODE_SETTINGS_FILES,
 } from "./constants";
 ("fs");
 
-export const copySettings = () => {
+export const copySettings = (settingsFilePath: string) => {
   try {
     console.log(`Starting the process of copying vscode settings`);
 
@@ -29,7 +27,7 @@ export const copySettings = () => {
 
     if (completeSettings) {
       writeFileSync(
-        join(VS_CODE_FOLDER_NAME, VS_CODE_SETTINGS_FILE_NAME),
+        settingsFilePath,
         JSON.stringify(completeSettings, null, 2)
       );
     }
