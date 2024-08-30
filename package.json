@@ -32,6 +32,7 @@
   },
   "scripts": {
     "start": "ts-node ./src/index.ts",
+    "postinstall": "npm run start",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
     "release": "commit-and-tag-version"
