@@ -1,5 +1,6 @@
-import { execSync } from "child_process";
-const packageInfo = require("../package.json");
+import { execSync } from 'child_process';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const packageInfo = require('../package.json');
 
 interface NpmList {
   name: string;
@@ -8,16 +9,16 @@ interface NpmList {
 
 export const isPkgGloballyInstalled = () => {
   const npmList: NpmList = JSON.parse(
-    execSync("npm ls -g --json=true", {
-      encoding: "utf-8",
-    })
+    execSync(`npm ls -g --json=true`, {
+      encoding: `utf-8`,
+    }),
   );
 
   const dependencies = Object.keys(npmList.dependencies);
 
   const isPkgGloballyInstalled = dependencies.find(
-    (val) => val.toLocaleLowerCase() === packageInfo.name.toLocaleLowerCase()
+    val => val.toLocaleLowerCase() === packageInfo.name.toLocaleLowerCase(),
   );
 
-  return isPkgGloballyInstalled;
+  return isPkgGloballyInstalled ? true : false;
 };

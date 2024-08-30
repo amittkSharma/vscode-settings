@@ -1,11 +1,8 @@
-export const getVscodeGlobalExtensionsFilePath = (
-  platform: NodeJS.Platform,
-  homedir: string
-) => {
+export const getVscodeGlobalExtensionsFilePath = (platform: NodeJS.Platform, homedir: string) => {
   switch (platform) {
-    case "darwin":
+    case 'darwin':
       return `${homedir}/Library/Application Support/Code/User/extensions.json`;
-    case "linux":
+    case 'linux':
       return `${homedir}/.config/Code/User/extensions.json`;
     default:
       return `${homedir}/AppData\\Code\\User\\extensions.json`;
