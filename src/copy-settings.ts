@@ -1,25 +1,17 @@
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
-import {
-  DEFAULT_SETTINGS_EXTENSIONS_PATH,
-  VS_CODE_FOLDER_NAME,
-  VS_CODE_SETTINGS_FILE_NAME,
-  VS_CODE_SETTINGS_FILES,
-} from "./constants";
-("fs");
+import { readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
+import { DEFAULT_SETTINGS_EXTENSIONS_PATH, VS_CODE_SETTINGS_FILES } from './constants';
+import { log } from './utils/logger';
 
-export const copySettings = () => {
+export const copySettings = (settingsFilePath: string) => {
   try {
-    console.log(`Starting the process of copying vscode settings`);
+    log.info(`Starting the process of copying vscode settings`);
 
     let completeSettings: object | undefined = undefined;
 
-    VS_CODE_SETTINGS_FILES.forEach((fileName) => {
-      let rawData = readFileSync(
-        join(DEFAULT_SETTINGS_EXTENSIONS_PATH, fileName),
-        "utf8"
-      );
-      let readable = JSON.parse(rawData);
+    VS_CODE_SETTINGS_FILES.forEach(fileName => {
+      const rawData = readFileSync(join(DEFAULT_SETTINGS_EXTENSIONS_PATH, fileName), 'utf8');
+      const readable = JSON.parse(rawData);
 
       completeSettings = {
         ...completeSettings,
@@ -28,14 +20,9 @@ export const copySettings = () => {
     });
 
     if (completeSettings) {
-      writeFileSync(
-        join(VS_CODE_FOLDER_NAME, VS_CODE_SETTINGS_FILE_NAME),
-        JSON.stringify(completeSettings, null, 2)
-      );
+      writeFileSync(settingsFilePath, JSON.stringify(completeSettings, null, 2));
     }
   } catch (error) {
-    throw new Error(
-      `Failed to copy the vscode settings due ${(error as Error).message}`
-    );
+    throw new Error(`Failed to copy the vscode settings due ${(error as Error).message}`);
   }
 };

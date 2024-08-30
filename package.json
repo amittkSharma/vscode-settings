@@ -18,12 +18,33 @@
     "url": "git+https://github.com/amittkSharma/vscode-settings.git"
   },
   "homepage": "https://github.com/amittkSharma/vscode-settings#readme",
+  "dependencies": {
+    "pino": "9.3.2",
+    "pino-pretty": "11.2.2",
+    "ts-node": "10.9.2"
+  },
   "devDependencies": {
-    "@types/node": "22.5.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "@types/node": "22.5.1",
+    "@types/pino": "7.0.5",
+    "commit-and-tag-version": "12.4.2",
+    "eslint-prettier-configs": "0.0.6",
+    "typescript": "5.5.4"
   },
   "scripts": {
-    "start": "ts-node ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "postinstall": "npm run start",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "release": "commit-and-tag-version"
+  },
+  "commit-and-tag-version": {
+    "noVerify": false,
+    "silent": false,
+    "skip": {
+      "changelog": false,
+      "bump": false,
+      "commit": false,
+      "tag": false
+    }
   }
 }

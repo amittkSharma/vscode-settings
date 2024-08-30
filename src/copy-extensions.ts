@@ -1,30 +1,22 @@
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
-import {
-  DEFAULT_SETTINGS_EXTENSIONS_PATH,
-  VS_CODE_EXTENSION_FILE,
-  VS_CODE_FOLDER_NAME,
-} from "./constants";
+import { readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
+import { DEFAULT_SETTINGS_EXTENSIONS_PATH, VS_CODE_EXTENSION_FILE } from './constants';
+import { log } from './utils/logger';
 
-export const copyExtensions = () => {
+export const copyExtensions = (extensionsFilePath: string) => {
   try {
-    console.log(`Starting the process of copying vscode extensions`);
+    log.info(`Starting the process of copying vscode extensions`);
 
-    let rawData = readFileSync(
+    const rawData = readFileSync(
       join(DEFAULT_SETTINGS_EXTENSIONS_PATH, VS_CODE_EXTENSION_FILE),
-      "utf8"
+      'utf8',
     );
-    let readable = JSON.parse(rawData);
+    const readable = JSON.parse(rawData);
 
     if (readable) {
-      writeFileSync(
-        join(VS_CODE_FOLDER_NAME, VS_CODE_EXTENSION_FILE),
-        JSON.stringify(readable, null, 2)
-      );
+      writeFileSync(extensionsFilePath, JSON.stringify(readable, null, 2));
     }
   } catch (error) {
-    throw new Error(
-      `Failed to copy the vscode extensions due ${(error as Error).message}`
-    );
+    throw new Error(`Failed to copy the vscode extensions due ${(error as Error).message}`);
   }
 };
